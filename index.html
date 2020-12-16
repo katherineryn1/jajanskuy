@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JajanSkuy</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Chilanka' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <p>Hi, <b>Customer</b>! Yuk jajan, kakak bisa pilih menu di bawah : </p>
+    
+    <ul class="nav nav-tabs" id="myTab">
+        <li class="nav-item">
+            <a class="nav-link" 
+                id="nav-makanan" 
+                href="#content-makanan">Makanan</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" 
+                id="nav-minuman" 
+                href="#content-minuman">Minuman</a>
+        </li>
+    </ul>
+    
+    <!-- Content -->
+    <div class="tab-content" id="myTabContent">
+        <!-- Makanan -->
+        <div class="tab-pane fade" id="content-makanan">
+            <!-- Batagor -->
+            <div class="item-makanan">
+                <img src="img/batagor.jpg" alt="Batagor">
+                <div class="description">
+                    <p>Batagor</p>
+                    <p>12.000</p>
+                </div>
+                <div class="order-item">
+                    <button type="button" class="btn btn-success minus" onclick="plusMinus(-1,'batagor','food',-12000)">-</button>
+                    <input type="text" class="food" id="batagor" value="0" disabled/>
+                    <button type="button" class="btn btn-success plus" onclick="plusMinus(1,'batagor','food',12000)">+</button>
+                </div>
+            </div>
+            <hr class="between">
+            <!-- Pempek Palembang -->
+            <div class="item-makanan">
+                <img src="img/pempek.jpeg" alt="Pempek Palembang" class="item-img">
+                <div class="description">
+                    <p>Pempek Palembang</p>
+                    <p>15.000</p>
+                </div>
+                <div class="order-item">
+                    <button type="button" class="btn btn-success minus" onclick="plusMinus(-1,'pempek-palembang','food',-15000)">-</button>
+                    <input type="text" class="food" id="pempek-palembang" value="0" disabled/>
+                    <button type="button" class="btn btn-success plus" onclick="plusMinus(1,'pempek-palembang','food',15000)">+</button>
+                </div>
+            </div>
+            <hr class="between">
+            <!-- Kentang Goreng -->
+            <div class="item-makanan">
+                <img src="img/kentangGoreng.jpg" alt="Kentang Goreng">
+                <div class="description">
+                    <p>Kentang Goreng</p>
+                    <p>10.000</p>
+                </div>
+                <div class="order-item">
+                    <button type="button" class="btn btn-success minus" onclick="plusMinus(-1,'kentang-goreng','food',-10000)">-</button>
+                    <input type="text" class="food" id="kentang-goreng" value="0" disabled/>
+                    <button type="button" class="btn btn-success plus" onclick="plusMinus(1,'kentang-goreng','food',10000)">+</button>
+                </div>
+            </div>
+            <hr class="between">
+            <!-- Lumpia Goreng -->
+            <div class="item-makanan">
+                <img src="img/lumpia.jpg" alt="Lumpia Goreng">
+                <div class="description">
+                    <p>Lumpia Goreng</p>
+                    <p>15.000</p>
+                </div>
+                <div class="order-item">
+                    <button type="button" class="btn btn-success minus" onclick="plusMinus(-1,'lumpia-goreng','food',-15000)">-</button>
+                    <input type="text" class="food" id="lumpia-goreng" value="0" disabled/>
+                    <button type="button" class="btn btn-success plus" onclick="plusMinus(1,'lumpia-goreng','food',15000)">+</button>
+                </div>
+            </div>
+            <hr class="between">
+            <!-- Pisang Nugget -->
+            <div class="item-makanan">
+                <img src="img/pisangNugget.jpg" alt="Pisang Nugget">
+                <div class="description">
+                    <p>Pisang Nugget</p>
+                    <p>12.000</p>
+                </div>
+                <div class="order-item">
+                    <button type="button" class="btn btn-success minus" onclick="plusMinus(-1,'pisang-nugget','food',-12000)">-</button>
+                    <input type="text" class="food" id="pisang-nugget" value="0" disabled/>
+                    <button type="button" class="btn btn-success plus" onclick="plusMinus(1,'pisang-nugget','food',12000)">+</button>
+                </div>
+            </div>
+            <hr class="between">
+            <!-- Roti Bakar -->
+            <div class="item-makanan">
+                <img src="img/rotiBakar.jpg" alt="Roti Bakar">
+                <div class="description">
+                    <p>Roti Bakar</p>
+                    <p>10.000</p>
+                </div>
+                <div class="order-item">
+                    <button type="button" class="btn btn-success minus" onclick="plusMinus(-1,'roti-bakar','food',-10000)">-</button>
+                    <input type="text" class="food" id="roti-bakar" value="0" disabled/>
+                    <button type="button" class="btn btn-success plus" onclick="plusMinus(1,'roti-bakar','food',10000)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Minuman -->
+        <div class="tab-pane fade" id="content-minuman">
+            <!-- Jus Jeruk -->
+            <div class="item-minuman">
+                <img src="img/jusJeruk.jpg" alt="Jus Jeruk">
+                <div class="description">
+                    <p>Jus Jeruk</p>
+                    <p>7.000</p>
+                </div>
+                <div class="order-item">
+                    <button type="button" class="btn btn-success minus" onclick="plusMinus(-1,'jus-jeruk','bev',-7000)">-</button>
+                    <input type="text" class="bev" id="jus-jeruk" value="0" disabled/>
+                    <button type="button" class="btn btn-success plus" onclick="plusMinus(1,'jus-jeruk','bev',7000)">+</button>
+                </div>
+            </div>
+            <hr class="between">
+            <!-- Teh Manis -->
+            <div class="item-minuman">
+                <img src="img/tehManis.jpg" alt="Teh Manis">
+                <div class="description">
+                    <p>Teh Manis</p>
+                    <p>5.000</p>
+                </div>
+                <div class="order-item">
+                    <button type="button" class="btn btn-success minus" onclick="plusMinus(-1,'teh-manis','bev',-5000)">-</button>
+                    <input type="text" class="bev" id="teh-manis" value="0" disabled/>
+                    <button type="button" class="btn btn-success plus" onclick="plusMinus(1,'teh-manis','bev',5000)">+</button>
+                </div>
+            </div>
+            <hr class="between">
+            <!-- Coffee Latte -->
+            <div class="item-minuman">
+                <img src="img/latte.jpg" alt="Coffee Latte">
+                <div class="description">
+                    <p>Coffee Latte</p>
+                    <p>15.000</p>
+                </div>
+                <div class="order-item">
+                    <button type="button" class="btn btn-success minus" onclick="plusMinus(-1,'coffee-latte','bev',-15000)">-</button>
+                    <input type="text" class="bev" id="coffee-latte" value="0" disabled/>
+                    <button type="button" class="btn btn-success plus" onclick="plusMinus(1,'coffee-latte','bev',15000)">+</button>
+                </div>
+            </div>
+            <hr class="between">
+            <!-- Milo Dinosaur -->
+            <div class="item-minuman">
+                <img src="img/milo.jpg" alt="Milo">
+                <div class="description">
+                    <p>Milo Dinosaur</p>
+                    <p>10.000</p>
+                </div>
+                <div class="order-item">
+                    <button type="button" class="btn btn-success minus" onclick="plusMinus(-1,'milo','bev',-10000)">-</button>
+                    <input type="text" class="bev" id="milo" value="0" disabled/>
+                    <button type="button" class="btn btn-success plus" onclick="plusMinus(1,'milo','bev',10000)">+</button>
+                </div>
+            </div>
+            <hr class="between">
+            <!-- Milkshake Vanilla -->
+            <div class="item-minuman">
+                <img src="img/milkshakeVanilla.jpg" alt="Milkshake Vanilla">
+                <div class="description">
+                    <p>Milkshake Vanilla</p>
+                    <p>10.000</p>
+                </div>
+                <div class="order-item">
+                    <button type="button" class="btn btn-success minus" onclick="plusMinus(-1,'milkshake-vanilla','bev',-10000)">-</button>
+                    <input type="text" class="bev" id="milkshake-vanilla" value="0" disabled/>
+                    <button type="button" class="btn btn-success plus" onclick="plusMinus(1,'milkshake-vanilla','bev',10000)">+</button>
+                </div>
+            </div>
+            <hr class="between">
+            <!-- Milkshake Stroberi -->
+            <div class="item-minuman">
+                <img src="img/milkshakeStroberi.jpg" alt="Milkshake Stroberi">
+                <div class="description">
+                    <p>Milkshake Stroberi</p>
+                    <p>10.000</p>
+                </div>
+                <div class="order-item">
+                    <button type="button" class="btn btn-success minus" onclick="plusMinus(-1,'milkshake-stroberi','bev',-10000)">-</button>
+                    <input type="text" class="bev" id="milkshake-stroberi" value="0" disabled/>
+                    <button type="button" class="btn btn-success plus" onclick="plusMinus(1,'milkshake-stroberi','bev',10000)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <hr class="between">
+        <div class="order-sum">
+            <div class="col">
+                <p>Ringkasan</p>
+                <p>Total</p>
+                <p id="total-order" style="text-transform:capitalize;"></p>
+            </div>
+            <div class="col">
+                <p></p>
+                <p id="jumlah-makanan"></p>
+                <p id="jumlah-minuman"></p>
+            </div>
+        </div>
+
+        <div class="order-now">
+            <button type="button" class="btn btn-success" id="btnOrder">Yuk pesan dulu~</button>
+        </div>
+
+        <!-- Konten LIFF v2 -->
+        <div id="liffAppContent">
+            <div class="footerLIFF">
+                <p id="openBrowser">Buka di external browser</p>
+                <p id="logout">Logout</p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="buttonGroup">
+                <div class="buttonRow">
+                    <button id="openWindowButton" class="btn btn-success btn-small">Buka di external browser</button>
+                    <button id="closeWindowButton" class="btn btn-danger btn-small">Close LIFF App</button>
+                </div>
+            </div>
+
+            <!-- LIFF Data -->
+            <div id="liffData">
+                <h3 id="liffDataHeader" class="textLeft">Informasi : </h3>
+
+                <table>
+                    <tr>
+                        <th>isInClient : </th>
+                        <td id="isInClient" class="textLeft"></td>
+                    </tr>
+                    <tr>
+                        <th>isLoggedIn : </th>
+                        <td id="isLoggedIn" class="textLeft"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Login Logout Button -->
+            <div class="buttonGroup">
+                <button id="liffLoginButton" class="btn btn-success btn-small">Login</button>
+                <button id="liffLogoutButton" class="btn btn-warning btn-small">Logout</button>
+            </div>
+        </div>
+
+        <!-- LIFF ID Error -->
+        <div id="liffIdErrorMessage" class="hidden">
+            <p>You have not assigned any value for LIFF ID.</p>
+            <p>If you are running the app using Node.js, please set the LIFF ID as an
+                environment variable in your Heroku account following the below steps :
+            </p>
+
+            <code id="code-block">
+                <ol>
+                    <li>Go to `Dashboard` in your Heroku account.</li>
+                    <li>Click on the app you just created.</li>
+                    <li>Click on `Settings` and toggle `Reveal Config Vars`.</li>
+                    <li>Set `MY_LIFF_ID` as the key and the LIFF ID as the value.</li>
+                    <li>Your app should be up and running. Enter the URL of your app in a web browser.</li>
+                </ol>
+            </code>
+            <p>If you are using any other platform, please add your LIFF ID in the <code>index.html</code> file.</p>
+            <p>For more information about how to add your LIFF ID, see <a
+                href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF 
+                app</a>.</p>
+        </div>
+
+        <!-- LIFF INIT ERROR -->
+        <div id="liffInitErrorMessage" class="hidden">
+            <p>Something went wrong with LIFF initialization.</p>
+            <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error occurs in the process of <code>liff.init()</code>. </p>
+        </div>
+
+        <!-- NODE.JS LIFF ID ERROR -->
+        <div id="nodeLiffIdErrorMessage" class="hidden">
+            <p>Unable to receive the LIFF ID as an environment variable.</p>
+        </div>
+    </div>
+</body>
+
+<script src="jajan-config.js"></script>
+<script src="liff-starter.js"></script>
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+
+<script>
+    // Agar tab makanan langsung kebuka ketika ngeload 
+    $(function () {
+        $('#myTab li:first-child a').tab('show')
+    })
+
+    $(document).ready(function(){
+        $(".nav-tabs a").click(function(){
+            $(this).tab('show');
+        });
+    });
+</script>
+</html>
