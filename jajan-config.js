@@ -4,7 +4,8 @@ var totalOrder = [];
 var totalHarga = 0;
 var text = "";
 
-function plusMinus(input, namaItem, jenisItem, harga){
+function plusMinus(input, namaItem, harga){
+    var jenisItem = document.getElementById(namaItem).getAttribute("class");
     var value = parseInt(document.getElementById(namaItem).value);
     if (value < 1 && input == -1) {
         value = value;
@@ -45,7 +46,7 @@ function printOrderSum(){
     for (var i = 0; i < totalOrder.length; i++) {
         // Ternyata tidak bisa diremove secara keseluruhan dengan JS, jadi diberi IF
         if (totalOrder[i][0] != "0") {
-            text += totalOrder[i][0] + " " + totalOrder[i][1] + "<br>";
+            text += "*" + totalOrder[i][0] + " " + totalOrder[i][1] + "<br>";
         }
     }
 
@@ -65,7 +66,33 @@ function printOrderSum(){
 }
 
 function simpanOrder(){
-    
+    if (jumlahItem == 0) {
+        alert("Pesan dulu ya, kak");
+    } else {
+        if (!liff.isInClient()) {
+            alert('Pesanan sudah diterima ya, kak! Tapi kami tidak bisa mengirimkan message karena fitur tidak tersedia.');
+        } else {
+            liff.sendMessages([{
+                'type': 'text',
+                'text': "Hai " + document.getElementById("customer").innerHTML + ",<br><br>" + 
+                    "Terima kasih telah memesan di Jajan Skuy, berikut review pesanannya : <br>" + text +
+                    "<br><br>Mohon ditunggu ya kak, pesanannya sedang kami proses!"
+            }]).then(function(){
+                alert('Pesanan diterima');
+            }).catch(function(error){
+                alert('Aduh error kak..');
+            });
+        }
+
+        // Reset all
+        $("input[type=text]").val('0');
+        jumlahItem = 0;
+        totalOrder = [];
+        totalHarga = 0;
+        text = "";
+        document.getElementById("total-order").innerHTML = "";
+        document.getElementById("btnOrder").innerHTML = "Yuk pesan dulu~";
+    }
 }
 
 // Digunakan untuk membuang - pada nama item
