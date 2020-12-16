@@ -14,7 +14,7 @@
 
 <body>
     <!-- Header -->
-    <p>Hi, <b>Customer</b>! Yuk jajan, kakak bisa pilih menu di bawah : </p>
+    <p>Hi, <span id="customer"><b>Customer</b></span>! Yuk jajan, kakak bisa pilih menu di bawah : </p>
     
     <ul class="nav nav-tabs" id="myTab">
         <li class="nav-item">
@@ -207,16 +207,9 @@
 
         <hr class="between">
         <div class="order-sum">
-            <div class="col">
-                <p>Ringkasan</p>
-                <p>Total</p>
-                <p id="total-order" style="text-transform:capitalize;"></p>
-            </div>
-            <div class="col">
-                <p></p>
-                <p id="jumlah-makanan"></p>
-                <p id="jumlah-minuman"></p>
-            </div>
+            <p>Ringkasan</p>
+            <p>Total</p>
+            <p id="total-order" style="text-transform:capitalize;"></p>
         </div>
 
         <div class="order-now">

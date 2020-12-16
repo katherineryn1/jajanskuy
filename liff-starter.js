@@ -70,6 +70,14 @@ function initializeApp(){
     // Check if user is logged in/out and disable inappropriate button
     if (liff.isLoggedIn()) {
         document.getElementById('liffLoginButton').disabled = true;
+        liff.getProfile()
+        .then(profile => {
+            const name = profile.displayName;
+            document.getElementById('customer').innerHTML = name;
+        })
+        .catch((err) => {
+            console.log('error', err);
+        });
     } else {
         document.getElementById('liffLogoutButton').disabled = true;
         document.getElementById("logout").classList.add('hidden');
@@ -91,6 +99,7 @@ function displayIsInClientInfo() {
     if (liff.isInClient()) {
         document.getElementById('liffLoginButton').classList.toggle('hidden');
         document.getElementById('liffLogoutButton').classList.toggle('hidden');
+        document.getElementById("logout").classList.add('hidden');
     }
 }
 
