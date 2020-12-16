@@ -72,11 +72,13 @@ function simpanOrder(){
         if (!liff.isInClient()) {
             alert('Pesanan sudah diterima ya, kak! Tapi kami tidak bisa mengirimkan message karena fitur tidak tersedia.');
         } else {
+            var message = "Hai " + document.getElementById("customer").innerHTML + ",<br><br>" + 
+            "Terima kasih telah memesan di Jajan Skuy, berikut review pesanannya : <br>" + text +
+            "<br><br>Mohon ditunggu ya kak, pesanannya sedang kami proses!";
+            
             liff.sendMessages([{
                 'type': 'text',
-                'text': "Hai " + document.getElementById("customer").innerHTML + ",<br><br>" + 
-                    "Terima kasih telah memesan di Jajan Skuy, berikut review pesanannya : <br>" + text +
-                    "<br><br>Mohon ditunggu ya kak, pesanannya sedang kami proses!"
+                'text': message
             }]).then(function(){
                 alert('Pesanan diterima');
             }).catch(function(error){
