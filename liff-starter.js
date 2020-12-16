@@ -75,7 +75,7 @@ function initializeApp(){
             document.getElementById('customer').innerHTML = profile.displayName;
             var pp = profile.pictureUrl;
             console.log(pp);
-            document.getElementById('profile-picture').innerHTML = pp;
+            document.getElementById('profile-picture').src = pp;
         })
         .catch((err) => {
             console.log('error', err);
