@@ -73,12 +73,14 @@ function initializeApp(){
         liff.getProfile()
         .then(profile => {
             document.getElementById('customer').innerHTML = profile.displayName;
+            var pp = profile.pictureUrl;
+            console.log(pp);
         })
         .catch((err) => {
             console.log('error', err);
         });
     } else {
-        document.getElementById("logout").classList.add('hidden');
+        document.getElementById('logout').classList.toggle('hidden');
     }
 }
 
@@ -96,9 +98,9 @@ function initializeApp(){
 function displayIsInClientInfo() {
     if (liff.isInClient()) {
         document.getElementById('liffLoginButton').classList.toggle('hidden');
-        document.getElementById("logout").classList.add('hidden');
+        document.getElementById('logout').classList.toggle('hidden');
     } else {
-        document.getElementById("open-browser").classList.add('hidden');
+        document.getElementById('open-browser').classList.toggle('hidden');
     }
 }
 

@@ -7,7 +7,32 @@ body {
     font-size: 150%;
 }
 
+.header {
+    margin: 0 2% 0 2%;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+    text-align: right;
+}
+
+.teks {
+    clear: both;
+}
+
+#logo-img,
+.profile-picture {
+    width: 8em;
+    border: 1px solid #e5e5e5;
+    border-radius: 50%;
+}
+
 #myTab {
+    clear: both;
     margin: 2% 2% 1% 2%;
 }
 
@@ -23,7 +48,7 @@ body {
     margin-bottom: 0.7%;
 }
 
-img {
+.item-img {
     width: 15%;
     border-radius: 5%;
     float: left;
@@ -71,7 +96,7 @@ input {
        margin: 2%; 
     }
 
-	img {
+	.item-img {
         max-width: 100%;
         width: 12em;
         border-radius: 5%;
