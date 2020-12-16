@@ -66,19 +66,20 @@ function printOrderSum(){
 }
 
 function simpanOrder(){
+    var message = "Hai " + document.getElementById("customer").innerHTML + ",<br><br>" + 
+            "Terima kasih telah memesan di Jajan Skuy, berikut review pesanannya : <br>" + text +
+            "<br><br>Mohon ditunggu ya kak, pesanannya sedang kami proses!";
+
+    console.log(message);
     if (jumlahItem == 0) {
         alert("Pesan dulu ya, kak");
     } else {
         if (!liff.isInClient()) {
             alert('Pesanan sudah diterima ya, kak! Tapi kami tidak bisa mengirimkan message karena fitur tidak tersedia.');
         } else {
-            var message = "Hai " + document.getElementById("customer").innerHTML + ",<br><br>" + 
-            "Terima kasih telah memesan di Jajan Skuy, berikut review pesanannya : <br>" + text +
-            "<br><br>Mohon ditunggu ya kak, pesanannya sedang kami proses!";
-            
             liff.sendMessages([{
                 'type': 'text',
-                'text': message
+                'text': 'Pesanan diterima'
             }]).then(function(){
                 alert('Pesanan diterima');
             }).catch(function(error){
