@@ -73,9 +73,7 @@ function initializeApp(){
         liff.getProfile()
         .then(profile => {
             document.getElementById('customer').innerHTML = profile.displayName;
-            var pp = profile.pictureUrl;
-            console.log(pp);
-            document.getElementById('profile-picture').src = pp;
+            document.getElementById('profile-picture').src = "img/batagor.jpg";
         })
         .catch((err) => {
             console.log('error', err);
