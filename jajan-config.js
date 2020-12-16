@@ -79,7 +79,7 @@ function simpanOrder(){
         } else {
             liff.sendMessages([{
                 'type': 'text',
-                'text': 'Pesanan diterima'
+                'text': "Pesanan diterima, kak! Mohon ditunggu"
             }]).then(function(){
                 alert('Pesanan diterima');
             }).catch(function(error){
