@@ -66,9 +66,9 @@ function printOrderSum(){
 }
 
 function simpanOrder(){
-    var message = "Hai " + document.getElementById("customer").innerHTML + ",<br><br>" + 
-            "Terima kasih telah memesan di Jajan Skuy, berikut review pesanannya : <br>" + text +
-            "<br><br>Mohon ditunggu ya kak, pesanannya sedang kami proses!";
+    var message = "Hai " + document.getElementById("customer").innerHTML + ",\n\n" + 
+            "Terima kasih telah memesan di Jajan Skuy, berikut review pesanannya :" + "\n\n" + text +
+            "\n\n" + "Mohon ditunggu ya kak, pesanannya sedang kami proses!";
 
     if (jumlahItem == 0) {
         alert("Pesan dulu ya, kak");

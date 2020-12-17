@@ -117,12 +117,20 @@ function registerButtonHandlers(){
         });
     });
 
-    // Check use LINE or exernal browser
+    document.getElementById('logout').addEventListener('click', function() {
+        if (liff.isLoggedIn()) {
+            liff.logout();
+            window.location.reload();
+        }
+    });
+
+    // Check use LINE or external browser
     document.getElementById('liffLoginButton').addEventListener('click', function() {
         if (!liff.isLoggedIn()) {
             liff.login();
         }
     });
+    
     // Send message
     // see simpanOrder function in jajan-config
 }
