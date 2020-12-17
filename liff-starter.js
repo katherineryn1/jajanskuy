@@ -144,8 +144,7 @@ function login() {
 
     // When the user clicks on <span> (x), close the modal
     close.onclick = function () {
-        // alert("Please... login dulu ya kak~");
-        modal.style.display = "none";
+        alert("Please... login dulu ya kak~");
     };
 }
 
