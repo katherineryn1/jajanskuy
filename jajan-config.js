@@ -79,7 +79,7 @@ function simpanOrder() {
         "Terima kasih telah memesan di Jajan Skuy, berikut review pesanannya :" +
         "\n\n" +
         text +
-        "\n\n" +
+        "\n" +
         "Mohon ditunggu ya kak, pesanannya sedang kami proses!";
 
     if (jumlahItem == 0) {

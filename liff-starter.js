@@ -112,7 +112,7 @@ function displayIsInClientInfo() {
 function registerButtonHandlers(){
     document.getElementById('open-browser').addEventListener('click', function(){
         liff.openWindow({
-            url: 'https://jajanliff.herokuapp.com/', // fill with Endpoint URL of web app
+            url: 'https://jajanskuyliff.herokuapp.com/', // fill with Endpoint URL of web app
             external: true
         });
     });
