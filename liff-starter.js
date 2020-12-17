@@ -1,7 +1,7 @@
 window.onload = function() {
     const useNodeJS = false; // if not using node server, set to false
     // defaultLiffId fill with LIFF ID yang ada di LIFF URL channel LIFF LINE Developer
-    const defaultLiffId = "1655326002-10Oq9WeY"; // change if  not using node server
+    const defaultLiffId = "1655326002-2bjWZRMX"; // change if  not using node server
 
     // DO NOT CHANGE THIS
     let myLiffId = "";
