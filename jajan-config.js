@@ -70,7 +70,6 @@ function simpanOrder(){
             "Terima kasih telah memesan di Jajan Skuy, berikut review pesanannya : <br>" + text +
             "<br><br>Mohon ditunggu ya kak, pesanannya sedang kami proses!";
 
-    console.log(message);
     if (jumlahItem == 0) {
         alert("Pesan dulu ya, kak");
     } else {
@@ -79,7 +78,7 @@ function simpanOrder(){
         } else {
             liff.sendMessages([{
                 'type': 'text',
-                'text': "Pesanan diterima, kak! Mohon ditunggu"
+                'text': message
             }]).then(function(){
                 alert('Pesanan diterima');
             }).catch(function(error){
