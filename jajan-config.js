@@ -83,7 +83,7 @@ function simpanOrder(){
             }]).then(function(){
                 alert('Pesanan diterima');
             }).catch(function(error){
-                alert('Aduh error kak..');
+                alert(error);
             });
         }
 
