@@ -69,7 +69,7 @@ function initializeApp(){
     
     // Check if user is logged in/out and disable inappropriate button
     if (liff.isLoggedIn()) {
-        document.getElementById('liffLoginButton').classList.add('hidden');
+        document.getElementById("logout").classList.remove('hidden');
         liff.getProfile()
         .then(profile => {
             document.getElementById('customer').innerHTML = profile.displayName;
@@ -82,7 +82,7 @@ function initializeApp(){
             console.log('error', err);
         });
     } else {
-        document.getElementById('logout').classList.toggle('hidden');
+        login();
     }
 }
 
@@ -99,11 +99,11 @@ function initializeApp(){
 */
 function displayIsInClientInfo() {
     if (liff.isInClient()) {
-        document.getElementById('liffLoginButton').classList.toggle('hidden');
-        document.getElementById('logout').classList.toggle('hidden');
-    } else {
-        document.getElementById('open-browser').classList.toggle('hidden');
-    }
+        document.getElementById("open-browser").classList.remove('hidden');
+    } 
+    // else {
+    //     document.getElementById("logout").classList.remove('hidden');
+    // }
 }
 
 /**
@@ -128,11 +128,25 @@ function registerButtonHandlers(){
     document.getElementById('liffLoginButton').addEventListener('click', function() {
         if (!liff.isLoggedIn()) {
             liff.login();
+            modal.style.display = "none";
         }
     });
     
     // Send message
     // see simpanOrder function in jajan-config
+}
+
+// Login Popup Function
+function login() {
+    var modal = document.getElementById("login-modal");
+    var close = document.getElementById("close");
+
+    modal.style.display = "block";
+
+    // When the user clicks on <span> (x), close the modal
+    close.onclick = function () {
+        alert("Please... login dulu ya kak~");
+    };
 }
 
 // Send alert if using external browser

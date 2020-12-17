@@ -223,8 +223,8 @@
         <!-- Konten LIFF v2 -->
         <div id="liffAppContent">
             <div class="footerLIFF">
-                <p id="open-browser">Buka di external browser</p>
-                <p id="logout">Logout</p>
+                <p id="open-browser" class="hidden">Buka di external browser</p>
+                <p id="logout" class="hidden">Logout</p>
             </div>
 
             <!-- LIFF Data (incase nanti diperlukan lagi buat ngecek)-->
@@ -241,10 +241,25 @@
                     </tr>
                 </table>
             </div> -->
+        </div>
 
-            <!-- Login Logout Button -->
-            <div class="buttonGroup">
-                <button id="liffLoginButton" class="btn btn-success btn-small">Login</button>
+        <!-- Login Button -->
+        <div id="login-modal">
+            <div id="login-popup">
+                <span id="close" class="right">&times;</span>
+                <div class="login-popup-header">
+                    <img src="img/logo.png" alt="Jajan Skuy" class="left" id="logo-img">
+                    <p class="login-popup-title">Jajan Skuy!</p>
+                </div>
+            
+                <div class="login-popup-opening">
+                    <p>Pengen jajan? Kuy order!</p>
+                    <p>Tapi sebelum order login dulu ya, kak. Kuy klik tombol di bawah!</p>
+                </div>
+            
+                <div class="buttonGroup">
+                    <button id="liffLoginButton" class="btn btn-success btn-small">Login</button>
+                </div>
             </div>
         </div>
 

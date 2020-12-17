@@ -4,7 +4,7 @@ var totalOrder = [];
 var totalHarga = 0;
 var text = "";
 
-function plusMinus(input, namaItem, harga){
+function plusMinus(input, namaItem, harga) {
     var jenisItem = document.getElementById(namaItem).getAttribute("class");
     var value = parseInt(document.getElementById(namaItem).value);
     if (value < 1 && input == -1) {
@@ -13,11 +13,11 @@ function plusMinus(input, namaItem, harga){
         value += input;
         jumlahItem += input;
         document.getElementById(namaItem).value = value;
-        getOrder(namaItem,jenisItem,harga);
+        getOrder(namaItem, jenisItem, harga);
     }
 }
 
-function getOrder(namaItem, jenisItem, harga){
+function getOrder(namaItem, jenisItem, harga) {
     var jumlah = document.getElementById(namaItem).value;
     var namaItem = namaItem.cleanString();
     var jenisItem = jenisItem;
@@ -28,20 +28,20 @@ function getOrder(namaItem, jenisItem, harga){
      */
     for (var i = 0; i < totalOrder.length; i++) {
         if (totalOrder[i][1] == namaItem) {
-            totalOrder.splice(i--,1);
+            totalOrder.splice(i--, 1);
             break;
         }
     }
 
     // Masukkan jumlah dan nama itemnya apa ke array untuk nanti ditampilkan
-    totalOrder.push([jumlah,namaItem,harga]);
+    totalOrder.push([jumlah, namaItem, harga]);
     // Hitung total harga
     totalHarga += harga;
     console.log(JSON.stringify(totalOrder));
     printOrderSum();
 }
 
-function printOrderSum(){
+function printOrderSum() {
     text = "";
     for (var i = 0; i < totalOrder.length; i++) {
         // Ternyata tidak bisa diremove secara keseluruhan dengan JS, jadi diberi IF
@@ -51,43 +51,61 @@ function printOrderSum(){
     }
 
     if (text == "") {
-        document.getElementById("total-order").style.removeProperty('text-transform');
-        document.getElementById("total-order").innerHTML = "Wah belum ada pesanan nih..";
+        document
+            .getElementById("total-order")
+            .style.removeProperty("text-transform");
+        document.getElementById("total-order").innerHTML =
+            "Wah belum ada pesanan nih..";
     } else {
-        document.getElementById("total-order").style.textTransform = "capitalize";
+        document.getElementById("total-order").style.textTransform =
+            "capitalize";
         document.getElementById("total-order").innerHTML = text;
     }
 
     if (jumlahItem == 0) {
         document.getElementById("btnOrder").innerHTML = "Yuk pesan dulu~";
     } else {
-        document.getElementById("btnOrder").innerHTML = jumlahItem + " item - " + totalHarga + " - Pesan Sekarang!";
+        document.getElementById("btnOrder").innerHTML =
+            jumlahItem + " item - " + totalHarga + " - Pesan Sekarang!";
     }
 }
 
-function simpanOrder(){
-    var message = "Hai " + document.getElementById("customer").innerHTML + ",\n\n" + 
-            "Terima kasih telah memesan di Jajan Skuy, berikut review pesanannya :" + "\n\n" + text +
-            "\n\n" + "Mohon ditunggu ya kak, pesanannya sedang kami proses!";
+function simpanOrder() {
+    text = text.replace("<br>", "\n");
+    var message =
+        "Hai " +
+        document.getElementById("customer").innerHTML +
+        ",\n\n" +
+        "Terima kasih telah memesan di Jajan Skuy, berikut review pesanannya :" +
+        "\n\n" +
+        text +
+        "\n\n" +
+        "Mohon ditunggu ya kak, pesanannya sedang kami proses!";
 
     if (jumlahItem == 0) {
         alert("Pesan dulu ya, kak");
     } else {
         if (!liff.isInClient()) {
-            alert('Pesanan sudah diterima ya, kak! Tapi kami tidak bisa mengirimkan message karena fitur tidak tersedia.');
+            alert(
+                "Pesanan sudah diterima ya, kak! Tapi kami tidak bisa mengirimkan message karena fitur tidak tersedia."
+            );
         } else {
-            liff.sendMessages([{
-                'type': 'text',
-                'text': message
-            }]).then(function(){
-                alert('Pesanan diterima');
-            }).catch(function(error){
-                alert(error);
-            });
+            liff.sendMessages([
+                {
+                    type: "text",
+                    text: message,
+                },
+            ])
+                .then(function () {
+                    alert("Pesanan diterima");
+                })
+                .catch(function (error) {
+                    alert(error);
+                });
         }
 
         // Reset all
-        $("input[type=text]").val('0');
+        $("input[type=text]").val("0");
         jumlahItem = 0;
         totalOrder = [];
         totalHarga = 0;
@@ -98,6 +116,6 @@ function simpanOrder(){
 }
 
 // Digunakan untuk membuang - pada nama item
-String.prototype.cleanString = function() {
+String.prototype.cleanString = function () {
     return this.replace("-", " ");
-}
+};
