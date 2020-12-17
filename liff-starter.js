@@ -81,6 +81,7 @@ function initializeApp(){
             console.log('error', err);
         });
     } else {
+        document.getElementById("logout").classList.add('hidden');
         login();
     }
 }
