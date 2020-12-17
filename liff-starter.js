@@ -69,7 +69,6 @@ function initializeApp(){
     
     // Check if user is logged in/out and disable inappropriate button
     if (liff.isLoggedIn()) {
-        document.getElementById("logout").classList.remove('hidden');
         liff.getProfile()
         .then(profile => {
             document.getElementById('customer').innerHTML = profile.displayName;
@@ -99,12 +98,11 @@ function initializeApp(){
 */
 function displayIsInClientInfo() {
     if (liff.isInClient()) {
-        document.getElementById("open-browser").classList.remove('hidden');
         document.getElementById("logout").classList.add('hidden');
-    } 
-    // else {
-    //     document.getElementById("logout").classList.remove('hidden');
-    // }
+        document.getElementById("open-browser").classList.remove('hidden');
+    } else {
+        document.getElementById("logout").classList.remove('hidden');
+    }
 }
 
 /**
@@ -146,7 +144,8 @@ function login() {
 
     // When the user clicks on <span> (x), close the modal
     close.onclick = function () {
-        alert("Please... login dulu ya kak~");
+        // alert("Please... login dulu ya kak~");
+        modal.style.display = "none";
     };
 }
 

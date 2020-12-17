@@ -37,7 +37,7 @@ function getOrder(namaItem, jenisItem, harga) {
     totalOrder.push([jumlah, namaItem, harga]);
     // Hitung total harga
     totalHarga += harga;
-    console.log(JSON.stringify(totalOrder));
+    // console.log(JSON.stringify(totalOrder));
     printOrderSum();
 }
 
@@ -71,7 +71,8 @@ function printOrderSum() {
 }
 
 function simpanOrder() {
-    text = text.replace("<br>", "\n");
+    text = text.replaceAll("<br>", "\n");
+    // console.log(text);
     var message =
         "Hai " +
         document.getElementById("customer").innerHTML +
