@@ -100,6 +100,7 @@ function initializeApp(){
 function displayIsInClientInfo() {
     if (liff.isInClient()) {
         document.getElementById("open-browser").classList.remove('hidden');
+        document.getElementById("logout").classList.add('hidden');
     } 
     // else {
     //     document.getElementById("logout").classList.remove('hidden');
